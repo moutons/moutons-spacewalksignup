@@ -35,7 +35,11 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class spacewalksignup {
-
-
+class spacewalksignup (
+) inherits spacewalksignup::params {
+  if $::osfamily == 'RedHat' {
+    # do something cool here
+    } else {
+        notice ("Your operating system ${::operatingsystem} is not supported by EPEL or IUS repositories")
+    }
 }
