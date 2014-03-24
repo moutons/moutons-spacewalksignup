@@ -1,6 +1,7 @@
 # == Class: spacewalksignup
 #
-# Full description of class spacewalksignup here.
+# when functional, it will ensure that the system is registered with
+#  the defined spacewalk server for .. stuff
 #
 # === Parameters
 #
@@ -29,16 +30,17 @@
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Shaun Mouton <sdmouton@gmail.com>
 #
 # === Copyright
 #
-# Copyright 2014 Your name here, unless otherwise noted.
+# Copyright 2014 Shaun Mouton, unless otherwise noted.
 #
 class spacewalksignup (
 ) inherits spacewalksignup::params {
   if $::osfamily == 'RedHat' {
-    # do something cool here
+    # do something cool here with this command:
+    # rhnreg_ks --serverUrl=$spacewalksignup::spacewalk_host --activationkey=$spacewalksignup::activation_key
     } else {
         notice ("Your operating system ${::operatingsystem} is not supported by EPEL or IUS repositories")
     }
